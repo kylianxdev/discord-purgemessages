@@ -1,1 +1,7 @@
-# discord-purgemessages
+This code is a Discord bot written in Python using the discord module and the commands extension. The bot includes a custom command called purge that allows users to delete a specified number of messages from the current channel. The command is invoked by typing /purge followed by the number of messages to delete.
+
+To use the purge command, the bot first calls the purge method of the TextChannel object and passes the specified number of messages to delete as the limit argument. The purge method returns a list of the deleted messages. The bot then checks the number of deleted messages and sends an appropriate response to the channel.
+
+If no messages were deleted, the bot creates an embed message with a custom color, text, and thumbnail (the user's profile picture), and uses the send method of the Context object to send the embed message to the channel. The embed message has a title of "Purge complete" and a description indicating that no messages were deleted.
+
+If at least one message was deleted, the bot creates an embed message with a custom color and text, and uses the send method of the Context object to send the embed message to the channel. The embed message has a title of "Purge complete" and a description indicating the number of deleted messages. If the number of deleted messages is 1, the description uses singular text ("1 message was deleted"). If the number of deleted messages is greater than 1, the description uses plural text ("X messages were deleted"). The bot also sets the user's profile picture as the thumbnail of the embed message.
